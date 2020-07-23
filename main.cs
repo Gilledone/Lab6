@@ -68,7 +68,28 @@ Console.WriteLine("-----------------");
 
     faculty1.Promote();
     Console.WriteLine(faculty1.Title);
+Console.WriteLine("-------------");
+    faculty1.Title = "Associate Professor";
+    faculty1.DateOfEmployment = new DateTime(2008, 7, 22, 0, 0, 0);
 
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+
+  faculty1.Title = "Associate Professor";
+    faculty1.DateOfEmployment = new DateTime(2019, 7, 22, 0, 0, 0);
+
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+    Console.WriteLine("Testing professor");
+    faculty1.Title = "Professor";
+
+    faculty1.Promote();
+
+    faculty1.Title = "Assistant professor";
+    faculty1.Employer = "Tri-C";
+    faculty1.DateOfEmployment = new DateTime(1997, 1, 1, 0, 0, 0);
+    
+    faculty1.Intro();
 
   }
 }

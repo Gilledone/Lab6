@@ -42,6 +42,7 @@ public bool Promote()
       if (DateTime.Compare(DateOfEmployment,  TwoYearsAgo)<0){
         Title = "Assistant Professor";
         Console.WriteLine("Faculty promoted to Assistant Professor rank");
+        return true;
       }else{
         Console.WriteLine("No promotion");      
     }
@@ -53,18 +54,35 @@ public bool Promote()
     if (DateTime.Compare(DateOfEmployment, FiveYearsAgo)<0){
       Title = "Associate Professor";
       Console.WriteLine("Faculty promoted to Associate Professor rank");
+      return true;
     }else{
       Console.WriteLine("No promotion");
     }
   }
   else if (Title == "Associate Professor")
   {
-    Console.WriteLine("is associate");
-  }
+    Console.WriteLine("is associate professor");
+    var TenYearsAgo = DateTime.Now.AddYears(-10);
+    if (DateTime.Compare(DateOfEmployment, TenYearsAgo)<0){
+      Title = "Professor";
+      Console.WriteLine("Faculty promoted to Professor rank");
+      return true;
+    }else{
+      Console.WriteLine("No promotion");
+    }
+    }else if (Title == "Professor")
+    {
+      Console.WriteLine("Is Professor");
+      Console.WriteLine("No more promotions");
+    }
+  
 
-  return true;      
+  return false;      
   }
-
+public override void Intro(){
+  base.Intro();
+Console.WriteLine($"I work as {Title} at {Employer} since {DateOfEmployment.Year}" );
+}
 }
 
   
