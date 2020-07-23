@@ -33,10 +33,42 @@ class MainClass {
     Console.WriteLine(faculty1.YearlySalary);
 
     Console.WriteLine(faculty1.Tenured); 
+Console.WriteLine("Checking tenure");
 
-    faculty1.DateOfEmployment = new DateTime(2009, 8, 1, 0, 0, 0);
+
+    faculty1.DateOfEmployment = new DateTime(2015, 7, 22, 0, 0, 0);
+    faculty1.GrantTenure();
+    Console.WriteLine(faculty1.Tenured);
+        faculty1.DateOfEmployment = new DateTime(2020, 7, 22, 0, 0, 0);
 
     faculty1.GrantTenure();
+    Console.WriteLine(faculty1.Tenured);
+
+    faculty1.Title = "Instructor";
+    faculty1.DateOfEmployment = new DateTime(2017, 7, 22, 0, 0, 0);
+
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+Console.WriteLine("-----------------");
+    faculty1.Title = "Instructor";
+    faculty1.DateOfEmployment = new DateTime(2019, 7, 22, 0, 0, 0);
+
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+  Console.WriteLine("Test Assistant Professor promotion");
+
+      faculty1.Title = "Assistant Professor";
+    faculty1.DateOfEmployment = new DateTime(2014, 7, 22, 0, 0, 0);
+
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+Console.WriteLine("-----------------");
+    faculty1.Title = "Assistant Professor";
+    faculty1.DateOfEmployment = new DateTime(2019, 7, 22, 0, 0, 0);
+
+    faculty1.Promote();
+    Console.WriteLine(faculty1.Title);
+
 
   }
 }

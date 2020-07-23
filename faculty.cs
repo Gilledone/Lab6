@@ -25,7 +25,46 @@ class Faculty: Person{
 
   public bool GrantTenure() 
   {
-    return true;
+    var FiveYearsAgo = DateTime.Now.AddYears(-5);
+    if (DateTime.Compare(DateOfEmployment, FiveYearsAgo)<0){
+      Tenured = true;
+    }else{
+      Tenured = false;
+    }
+    return Tenured;
+    }
+
+public bool Promote()
+{
+  if (Title == "Instructor"){
+    Console.WriteLine("is instructor");
+      var TwoYearsAgo = DateTime.Now.AddYears(-2);
+      if (DateTime.Compare(DateOfEmployment,  TwoYearsAgo)<0){
+        Title = "Assistant Professor";
+        Console.WriteLine("Faculty promoted to Assistant Professor rank");
+      }else{
+        Console.WriteLine("No promotion");      
+    }
   }
+  else if (Title == "Assistant Professor")
+  {
+    Console.WriteLine("is assistant Professor");
+    var FiveYearsAgo = DateTime.Now.AddYears(-5);
+    if (DateTime.Compare(DateOfEmployment, FiveYearsAgo)<0){
+      Title = "Associate Professor";
+      Console.WriteLine("Faculty promoted to Associate Professor rank");
+    }else{
+      Console.WriteLine("No promotion");
+    }
+  }
+  else if (Title == "Associate Professor")
+  {
+    Console.WriteLine("is associate");
+  }
+
+  return true;      
+  }
+
 }
+
   
