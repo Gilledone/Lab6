@@ -17,7 +17,7 @@ class Address{
     }
     set{
       if (value.Length==2)
-        state = value;
+        return value;
       else
        Console.WriteLine("State code should be 2 characters long");
     }
